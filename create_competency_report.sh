@@ -105,7 +105,7 @@ if [ "$quantitative" == "TRUE" ]; then
   exit_status=$?  
 else 
   R -e "Sweave('$sweave_report')" --args  --kit="$kit" --message="$message" \
-    --run="$run_results" --runstats="$runstats" --seq="$seq_results" \
+    --run="$run_results" --runstats="$run_stats" --seq="$seq_results" \
     --seqstats=$"$seq_stats" >>$log_file 2>&1
   exit_status=$?    
 fi
