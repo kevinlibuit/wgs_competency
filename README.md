@@ -44,6 +44,7 @@ In order to create a quantitative report -
         picard-2.9.2
         samtools-1.3.1
         VarScan v2.3
+    FastQC v0.11.5
     SPAdes Genome Assembler v3.11.1
     QUAST v4.5
 
