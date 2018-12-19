@@ -111,8 +111,8 @@ else
 fi
 
 if [ "$exit_status" -ne 0 ]; then
-  echo "Sweave was unable to complete the conversion. Please check the log file" \
-    " ${output_dir}/${prefix}_script.log" | tee -a $log_file
+  echo "Sweave was unable to complete the conversion. Please check the log file." \
+    | tee -a $log_file
   exit 1
 fi  
 
