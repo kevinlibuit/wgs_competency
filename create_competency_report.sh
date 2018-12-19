@@ -120,7 +120,7 @@ fi
 # Insert title into tex report
 #----------------------------------------------------
 
-sed -i '.bak' "s/\[0.2in\]\"Title goes here\"/\[0.2in\] $title/" $tex_report || true
+sed -i['.bak'] "s/\[0.2in\]\"Title goes here\"/\[0.2in\] $title/" $tex_report || true
 
 echo "Tex conversion successful." | tee -a $log_file
 
