@@ -395,6 +395,14 @@ for (run in unique.runs) {
     }  
   }
   
+  for (i in 1:nrow(comp.df)) {  
+    if (comp.df$Metric[i] == "Contigs") {
+      comp.df$Threshold[i] <- paste("<=", comp.df$Threshold[i], sep=' ')
+    } else {
+      comp.df$Threshold[i] <- paste(">=", comp.df$Threshold[i], sep=' ')
+    }
+  }
+
   for (id in unique(comp.df$IsolateID)) {
     isolate.df <- seq.results[which(seq.results$IsolateID == id & seq.results$Run==run),]
     if (isolate.df$Reads < 100000) {
@@ -418,6 +426,8 @@ for (run in unique.runs) {
     scalebox=0.8, caption.placement = "bottom",include.rownames=FALSE))
   comp.table.out <- gsub("(\\s|^)green(.+)green", "\\1\\\\textcolor{green}{\\\\textbf{\\2}}", comp.table.out)
   comp.table.out <- gsub("(\\s|^)red(.+)red", "\\1\\\\textcolor{red}{\\\\textbf{\\2}}", comp.table.out)  
+  comp.table.out <- gsub("\\$>\\$=", "\\$\\\\geq\\$", comp.table.out)
+  comp.table.out <- gsub("\\$<\\$=", "\\$\\\\leq\\$", comp.table.out)
 
   comp.tables <- append(comp.tables, comp.table.out) 
    
