@@ -21,7 +21,7 @@ The intention is for a user to construct a bioinformatic workflow which produces
 
 ## Usage
 
-In order to create a graphical report - 
+In order to create a graphical report -  (first expand the coverage_files archive) 
 
     create_competency_report.sh -p <prefix> -t <Report title> -T graphical_template.Rnw
 
