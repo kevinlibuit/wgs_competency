@@ -1,7 +1,9 @@
 wgs_competency
 ================
 
-The current scripts provide functionality for creation of quantitative and graphical reports (see example reports) summarizing a bacterial whole genome DNA sequencing competency assessment analysis pipeline. The included templates may serve as the basis for customization. The files seq_stats.tsv and run_stats.tsv are comprised of summary stats derived from a distribution of metrics for six isolates sequenced during the 2018 PulseNet-GenomeTrakr harmonized Proficiency Testing (PT) exercise as part of a 16-sample 2X250 Illumina MiSeq run (V2 chemistry) using the Nextera XT DNA Library Prep Kit. For valid use in competency assessments, equivalent SOPs should be employed for sequencing and analysis of the isolates listed below. 
+This repository provides functionality for creation of quantitative and graphical reports (see example reports) summarizing a bacterial whole genome DNA sequencing competency assessment analysis pipeline. The included templates may serve as the basis for customization.
+
+The intention is for a user to construct a bioinformatic workflow which produces the required metrics documented in input_file_formatting.txt. The files seq_stats.tsv and run_stats.tsv are comprised of summary stats derived from a distribution of metrics for six isolates sequenced during the 2018 PulseNet-GenomeTrakr harmonized Proficiency Testing (PT) exercise as part of a 16-sample 2X250 Illumina MiSeq run (V2 chemistry) using the Nextera XT DNA Library Prep Kit. If the user intends to employ the provided summary stats files, equivalent laboratory SOPs and bioinformatics software should be employed for sequencing and analysis of the isolates listed below. 
 
 ## Software Dependencies
 
