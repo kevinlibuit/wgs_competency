@@ -10,7 +10,7 @@ output_dir='.'
 prefix='Competency_report'
 quantitative='FALSE'
 report_template=''
-template='competency_2018_template.Rnw'
+template='graphical_report_template.Rnw'
 title=''
 
 # Input Files
@@ -35,6 +35,8 @@ display_usage() {
   echo -e "      Default: ''" 
   echo -e "  -o  output directory."
   echo -e "      Default: ." 
+  echo -e "  -p  Output file prefix."
+  echo -e "      Default: Competency_report" 
   echo -e "  -q  flag - create quantitative report."
   echo -e "      Default: create graphical report" 
   echo -e "  -r  Run results file."
@@ -48,7 +50,7 @@ display_usage() {
   echo -e "  -t  Report title."
   echo -e "      Default: ''" 
   echo -e "  -T  Report template (.Rnw)."
-  echo -e "      Default: competency_2018_template.Rnw" 
+  echo -e "      Default: graphical_report_template.Rnw" 
   echo -e "  -h  Displays this help message\n"
   echo -e "create_competency_report.sh"
   echo -e "This script is part of a competency assessment analysis pipeline and produces "
