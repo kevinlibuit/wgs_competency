@@ -23,11 +23,11 @@ The intention is for a user to construct a bioinformatic workflow which produces
 
 In order to create a graphical report -  (first expand the coverage_files archive) 
 
-    create_competency_report.sh -p <prefix> -t <Report title> -T graphical_template.Rnw
+    create_competency_report.sh -p <prefix> -t <Report title> -T graphical_report_template.Rnw
 
 In order to create a quantitative report - 
 
-    create_competency_report.sh -q -p <prefix> -t <Report title> -T quantitative_template.Rnw
+    create_competency_report.sh -q -p <prefix> -t <Report title> -T quantitative_report_template.Rnw
 
 ## Bacterial Isolates
 
