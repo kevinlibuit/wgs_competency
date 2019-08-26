@@ -56,4 +56,4 @@ Joseph D. Baugher, Ph.D.
 
 ## Maintainer
 
-Joseph D. Baugher, Ph.D., joseph.baugher@fda.hhs.gov
+Joseph D. Baugher, Ph.D.
