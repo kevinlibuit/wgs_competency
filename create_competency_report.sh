@@ -9,8 +9,7 @@ log_file=''
 output_dir='.'
 prefix='Competency_report'
 quantitative='FALSE'
-report_template=''
-template='graphical_report_template.Rnw'
+report_template='graphical_report_template.Rnw'
 title=''
 
 # Input Files
