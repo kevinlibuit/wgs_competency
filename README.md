@@ -42,13 +42,47 @@ In order to create a quantitative report -
   If the provided summary stats are used, it is recommended to perform analysis using equivalent versions of the following software programs. 
 
     CFSAN SNP Pipeline v1.0
-        bowtie2-2.3.4.1-beta
-        picard-2.9.2
-        samtools-1.3.1
+        bowtie2 v2.3.4.1-beta
+        picard v2.9.2
+        samtools v1.3.1
         VarScan v2.3
     FastQC v0.11.5
+    samtools v1.3.1
     SPAdes Genome Assembler v3.11.1
     QUAST v4.5
+
+## Metrics
+  Definition and derivation of the relevant sequencing metrics (seq_results.tsv, seq_stats.tsv).
+
+    CFSAN SNP Pipeline v1.0
+        Reads - the number of sequencing read pairs.
+        PercMapped (Reads Mapped)- the percentage of reads which are mappable to the reference.
+        MeanDepth - the mean depth of coverage after mapping reads to the reference. 
+        SNPs - the number of SNPs reported.
+        MeanInsert - the mean length of the sequence between the adapters.
+    FastQC v0.11.5
+        MeanR1Qual - the mean of the mean read quality scores - forward reads (R1)
+        MeanR2Qual - the mean of the mean read quality scores - reverse reads (R2)
+    samtools v1.3.1
+        CovLT10 (Low Coverage Positions)- the number of positions with depth of coverage < 10X.
+        Coverage plots - visualizations of coverage depth and variance across each genomic position.
+    SPAdes Genome Assembler v3.11.1 / QUAST v4.5
+        NG50 - The N50 assembly quality metric, normalized by genome size. The contig length such that using equal or longer length produces x% of the length of the reference genome, allowing for comparisons between different genomes. 
+        Contigs - the total number of contigs in the assembly (> 0 bp).
+        GenomeFraction - the percentage of reference to which at least one contig is mappable.
+        LengthDelta - the difference between the total length of the assembly (> 0 bp) and the reference length.
+        UnalignedLength - the total length of all assembled contigs which could not be aligned to the reference. 
+            
+  Definition and derivation of the relevant run metrics (run_results.tsv, run_stats.tsv). 
+  
+    Illumina Sequencing Analysis Viewer (SAV) or BaseSpace or InterOp v1.1.4
+        ClusterDensity - the density of clusters for each tile.
+        PerClustersPF - the percentage of clusters passing filter for each tile.
+        ReadsPF_M - the number of reads/clusters passing filter (Millions).
+        TotalYield_GB - the total yield (Gb).
+        PerGtQ30 - the percentage of bases with a Q score >= 30.
+        PerReadsIdentified - the percentage of ReadsPF_M which were assigned to an index.
+        IndexingCV - the coefficient of variation for the number of counts across all indices.
 
 ## Authors
 
