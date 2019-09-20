@@ -31,8 +31,8 @@ In order to create a quantitative report -
 
 ## Bacterial Isolates
 
-    We plan to make these isolates available at the [ATCC](https://www.atcc.org/) in the near future. In the meantime, please contact the Maintainer with questions regarding obtaining the isolates.
-
+  These isolates will be made available at [ATCC](https://www.atcc.org) in the near future. In the meantime, please contact the Maintainer with questions regarding obtaining the isolates.
+ 
     SAP18-0432    Salmonella enterica subsp. enterica serovar Enteritidis
     SAP18-H9654   Salmonella enterica subsp. enterica serovar Enteritidis
     SAP18-6199    Salmonella enterica subsp. enterica serovar Typhimurium
@@ -42,7 +42,7 @@ In order to create a quantitative report -
 
 ## Reference Genomes and Sequence Data
 
-    Closed reference genomes and a large amount of sequence data from the 2018 Gen-FS PT exercise has been made publicly available at the [NCBI BioProject PRJNA507264](https://www.ncbi.nlm.nih.gov/bioproject/507264 "BioProject PRJNA507264"). The complete sequencing dataset and a journal announcement describing the dataset will be available in the near future. 
+  Closed reference genomes and a large amount of sequence data from the 2018 Gen-FS PT exercise has been made publicly available at the NCBI BioProject [PRJNA507264](https://www.ncbi.nlm.nih.gov/bioproject/507264 "BioProject PRJNA507264"). The complete sequencing dataset and a journal announcement describing the dataset will be available in the near future. 
 
 ## Analysis Software
   If the provided summary stats are used, it is recommended to perform analysis using equivalent versions of the following software programs. 
