@@ -44,6 +44,10 @@ In order to create a quantitative report -
 
   Closed reference genomes and a large amount of sequence data from the 2018 Gen-FS PT exercise has been made publicly available at the NCBI BioProject [PRJNA507264](https://www.ncbi.nlm.nih.gov/bioproject/507264 "BioProject PRJNA507264"). The complete sequencing dataset and a journal announcement describing the dataset will be available in the near future. 
 
+## Bacterial Whole Genome Sequencing SOP
+
+  The harmonized 2018 Gen-FS PT SOP will be released along with a journal announcement in the near future. In the meantime, please contact the Maintainer with questions regarding obtaining the SOP.
+
 ## Analysis Software
   If the provided summary stats are used, it is recommended to perform analysis using equivalent versions of the following software programs. 
 
