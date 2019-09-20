@@ -3,7 +3,7 @@ wgs_competency
 
 This repository provides functionality for creation of quantitative and graphical reports (see example reports) summarizing a bacterial whole genome DNA sequencing competency assessment analysis pipeline. The included templates may serve as the basis for customization.
 
-The intention is for a user to construct a bioinformatic workflow which produces the required metrics documented in input_file_formatting.txt. The files seq_stats.tsv and run_stats.tsv are comprised of summary stats derived from a distribution of metrics for six isolates sequenced during the 2018 PulseNet-GenomeTrakr harmonized Proficiency Testing (PT) exercise as part of a 16-sample 2X250 Illumina MiSeq run (V2 chemistry) using the Nextera XT DNA Library Prep Kit. If the user intends to employ the provided summary stats files, equivalent laboratory SOPs and bioinformatics software should be employed for sequencing and analysis of the isolates listed below. 
+The intention is for a user to construct a bioinformatic workflow which produces the required metrics documented in input_file_formatting.txt. The files seq_stats.tsv and run_stats.tsv are comprised of summary stats derived from a distribution of metrics for six isolates sequenced during the 2018 Gen-FS (PulseNet/GenomeTrakr) harmonized Proficiency Testing (PT) exercise as part of a 16-sample 2X250 Illumina MiSeq run (V2 chemistry) using the Nextera XT DNA Library Prep Kit. If the user intends to employ the provided summary stats files, equivalent laboratory SOPs and bioinformatics software should be employed for sequencing and analysis of the isolates listed below. 
 
 ## Software Dependencies
 
@@ -31,12 +31,18 @@ In order to create a quantitative report -
 
 ## Bacterial Isolates
 
+    We plan to make these isolates available at the [ATCC](https://www.atcc.org/) in the near future. In the meantime, please contact the Maintainer with questions regarding obtaining the isolates.
+
     SAP18-0432    Salmonella enterica subsp. enterica serovar Enteritidis
     SAP18-H9654   Salmonella enterica subsp. enterica serovar Enteritidis
     SAP18-6199    Salmonella enterica subsp. enterica serovar Typhimurium
     SAP18-8729    Salmonella enterica subsp. enterica serovar Newport
     LMP18-H2446   Listeria monocytogenes
     LMP18-H8393   Listeria monocytogenes
+
+## Reference Genomes and Sequence Data
+
+    Closed reference genomes and a large amount of sequence data from the 2018 Gen-FS PT exercise has been made publicly available at the [NCBI BioProject PRJNA507264](https://www.ncbi.nlm.nih.gov/bioproject/507264 "BioProject PRJNA507264"). The complete sequencing dataset and a journal announcement describing the dataset will be available in the near future. 
 
 ## Analysis Software
   If the provided summary stats are used, it is recommended to perform analysis using equivalent versions of the following software programs. 
