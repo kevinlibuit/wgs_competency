@@ -9,7 +9,8 @@ log_file=''
 output_dir='.'
 prefix='Competency_report'
 quantitative='FALSE'
-report_template='graphical_report_template.Rnw'
+report_template=''
+template='competency_2018_template.Rnw'
 title=''
 
 # Input Files
@@ -34,14 +35,6 @@ display_usage() {
   echo -e "      Default: ''" 
   echo -e "  -o  output directory."
   echo -e "      Default: ." 
-  echo -e "  -p  Output file prefix."
-  echo -e "      Default: Competency_report" 
-  echo -e "  -q  flag - create quantitative report."
-  echo -e "      Default: create graphical report" 
-  echo -e "  -r  Run results file."
-  echo -e "      Default: run_results.tsv" 
-  echo -e "  -R  Run stats file."
-  echo -e "      Default: run_stats.tsv"  
   echo -e "  -s  Sequencing results file."
   echo -e "      Default: seq_results.tsv" 
   echo -e "  -S  Sequencing stats file."
@@ -49,7 +42,7 @@ display_usage() {
   echo -e "  -t  Report title."
   echo -e "      Default: ''" 
   echo -e "  -T  Report template (.Rnw)."
-  echo -e "      Default: graphical_report_template.Rnw" 
+  echo -e "      Default: competency_2018_template.Rnw" 
   echo -e "  -h  Displays this help message\n"
   echo -e "create_competency_report.sh"
   echo -e "This script is part of a competency assessment analysis pipeline and produces "
@@ -62,16 +55,13 @@ display_usage() {
 # Options
 #---------
 
-while getopts ":k:l:m:o:p:qr:R:s:S:t:T:h" opt; do
+while getopts ":k:l:m:o:p:s:S:t:T:h" opt; do
   case $opt in
     k) kit=$OPTARG;;
     l) log_file=$OPTARG;;
     m) message=$OPTARG;;
     o) output_dir=${OPTARG%/};;
     p) prefix=$OPTARG;;
-    q) quantitative='TRUE';;
-    r) run_results=$OPTARG;;
-    R) run_stats=$OPTARG;;
     s) seq_results=$OPTARG;;
     S) seq_stats=$OPTARG;;
     t) title=$OPTARG;;
@@ -100,16 +90,12 @@ cp $report_template $sweave_report
 
 echo "Converting Sweave to Tex" | tee $log_file
 
-if [ "$quantitative" == "TRUE" ]; then 
-  R -e "Sweave('$sweave_report')" --args  --seq="$seq_results" --seqstats=$"$seq_stats" \
-    >>$log_file 2>&1
-  exit_status=$?  
-else 
-  R -e "Sweave('$sweave_report')" --args  --kit="$kit" --message="$message" \
-    --run="$run_results" --runstats="$run_stats" --seq="$seq_results" \
-    --seqstats=$"$seq_stats" >>$log_file 2>&1
-  exit_status=$?    
-fi
+cd ${output_dir}
+
+R -e "Sweave('$sweave_report')" --args  --kit="$kit" --message="$message" \
+  --seq="$seq_results" \
+  --seqstats=$"$seq_stats" >>$log_file 2>&1
+exit_status=$?    
 
 if [ "$exit_status" -ne 0 ]; then
   echo "Sweave was unable to complete the conversion. Please check the log file." \
@@ -120,8 +106,10 @@ fi
 #----------------------------------------------------
 # Insert title into tex report
 #----------------------------------------------------
-
-sed -i['.bak'] "s/\[0.2in\]\"Title goes here\"/\[0.2in\] $title/" $tex_report || true
+echo $title
+title_clean=$(echo $title | sed 's/"//g')
+echo $title_clean
+sed -i['.bak'] "s/\"Title goes here\"/ ${title_clean}/" $tex_report || true
 
 echo "Tex conversion successful." | tee -a $log_file
 
